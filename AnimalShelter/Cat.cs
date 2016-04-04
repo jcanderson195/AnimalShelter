@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace AnimalShelter
 {
-   public class Animal
+    class Cat : Animal
     {
-        public string Breed;
-        public int Age;
-        public double Price;
-        public bool AdoptionStatus;
 
+        public Cat()
+        {
+
+        }
     }
 }

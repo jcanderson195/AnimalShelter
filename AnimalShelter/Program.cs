@@ -11,7 +11,10 @@ namespace AnimalShelter
         static void Main(string[] args)
         {
             SystemOperations runSystem = new SystemOperations();
+            runSystem.Introduction();
             runSystem.SystemFlow();
+
+            
 
         }
     }

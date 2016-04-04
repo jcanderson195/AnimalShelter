@@ -8,28 +8,63 @@ namespace AnimalShelter
 {
     class SystemOperations
     {
-
+        Dog donateDog = new Dog();
         public SystemOperations()
         {
+           
+        }
 
+
+
+        public void Introduction()
+        {
+            Console.WriteLine("Welcome DevCodeCamp Animal Shelter!");
+            Console.WriteLine("----------------------");
         }
 
         public void SystemFlow()
         {
-            Console.WriteLine("Welcome DevCodeCamp Animal Shelter!");
-            Console.WriteLine("----------------------");
-            Console.WriteLine("Are you looking to adopt a pet?");
-            Console.WriteLine("1. Yes");
-            Console.WriteLine("2.No");
+            
+            Console.WriteLine("Are you looking to adopt a pet or donate an animal?");
+            Console.WriteLine("1. Adopt a pet");
+            Console.WriteLine("2. Donate an animal");
+            Console.WriteLine("3. Other");
 
             int choice;
             choice = Convert.ToInt32(Console.ReadLine());
+            
 
             if (choice == 1)
             {
-                //insert animal shelter function
+                //insert adopt a pet function
             }
-            else if (choice == 2)
+            else if(choice == 2)
+            {
+                Console.WriteLine("Are you donating a dog or a cat?");
+                Console.WriteLine("1. Dog");
+                Console.WriteLine("2. Cat");
+
+                int choice2 = Convert.ToInt32(Console.ReadLine());
+                
+                if (choice2 == 1)
+                {
+                    
+                    donateDog.DonateDogOption();
+                    SystemFlow();
+                }
+                else if (choice2 == 2)
+                {
+                    //insert donate cat function
+                }
+                else
+                {
+                    Console.WriteLine("Sorry I don't recgnize that command. Please enter the numerical value associated with your decision.");
+                    SystemFlow();
+                }
+
+
+            }
+            else if (choice == 3)
             {
                 
 
@@ -38,14 +73,14 @@ namespace AnimalShelter
                 Console.WriteLine("2.Exit");
                 Console.WriteLine("----------------------");
 
-                int choice2;
-                choice2 = Convert.ToInt32(Console.ReadLine());
+                int choice3;
+                choice3 = Convert.ToInt32(Console.ReadLine());
 
-                if (choice2 == 1)
+                if (choice3 == 1)
                 {
                     //display list of animals
                 }
-                else if (choice2 == 2)
+                else if (choice3 == 2)
                 {
                     Console.WriteLine("Thank you for visiting DevCodeCamp Animal Shelter!");
                     Environment.Exit(0);
