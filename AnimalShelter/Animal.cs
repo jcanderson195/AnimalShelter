@@ -8,10 +8,10 @@ namespace AnimalShelter
 {
    public class Animal
     {
-        public string Breed;
-        public int Age;
-        public double Price;
-        public bool AdoptionStatus;
+        public string name;
+        public int age;
+        public double price;
+        public bool shots;
 
     }
 }

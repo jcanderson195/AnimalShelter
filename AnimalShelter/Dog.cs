@@ -9,9 +9,12 @@ namespace AnimalShelter
    public class Dog : Animal
     {
         public string dogName;
+        public double dogPrice;
 
         List<string> ListOfDogs = new List<string>();
-        
+
+        List<bool> ShotsStatus = new List<bool>();
+
 
 
         public Dog()
@@ -20,7 +23,13 @@ namespace AnimalShelter
             ListOfDogs.Add("Spike");
             ListOfDogs.Add("Brian");
             ListOfDogs.Add("Blizzard");
-            
+
+            ShotsStatus.Add(true);
+            ShotsStatus.Add(true);
+            ShotsStatus.Add(true);
+            ShotsStatus.Add(true);
+
+            dogPrice = 200.00;
 
         }
 
@@ -31,20 +40,32 @@ namespace AnimalShelter
             {
                 Console.WriteLine(ListOfDogs[index]);
             }
-            
+
         }
 
+        public void DisplayShotStatusForDogs()
+        {
+            Console.WriteLine("Shots Status For Dogs");
+            for (int index = 0; index < ShotsStatus.Count; index++)
+            {
+                Console.WriteLine(ShotsStatus[index]);
+            }
+
+        }
 
         public string DonateDog()
         {
-            
+
             Console.WriteLine("What's the dog's name?");
-             dogName = Console.ReadLine();
+            dogName = Console.ReadLine();
             Console.WriteLine("Thank you for donating " + dogName + " to the shelter.");
 
             ListOfDogs.Add(dogName);
+            ShotsStatus.Add(false);
             Console.WriteLine("--------------------");
             DisplayListOfDogs();
+            Console.WriteLine("--------------------");
+            DisplayShotStatusForDogs();
             Console.WriteLine("--------------------");
 
 
@@ -62,16 +83,16 @@ namespace AnimalShelter
             {
 
                 DonateDog();
-                
+
             }
-            
-                else if (choice == 2)
-                {
-                    Console.WriteLine("Thank you for visiting DevCodeCamp Animal Shelter!");
-                    Environment.Exit(0);
-                    Console.ReadKey();
-                }
+
+            else if (choice == 2)
+            {
+                Console.WriteLine("Thank you for visiting DevCodeCamp Animal Shelter!");
+                Environment.Exit(0);
+                Console.ReadKey();
             }
+        }
 
         public void AdoptDogOption()
         {
@@ -99,6 +120,8 @@ namespace AnimalShelter
         {
             DisplayListOfDogs();
             Console.WriteLine("--------------------");
+            DisplayShotStatusForDogs();
+            Console.WriteLine("--------------------");
 
             Console.WriteLine("Please enter the name which dog you would like to adopt. Name is case sensitive!");
 
@@ -106,49 +129,120 @@ namespace AnimalShelter
 
             if (choice == "Charlie")
             {
-                ListOfDogs.Remove("Charlie");
-                Console.WriteLine("Thank you for adopting Charlie. I hope he brings you much enjoyment.");
-                Console.WriteLine("--------------------");
-
-                DisplayListOfDogs();
-                Console.WriteLine("--------------------");
+                Console.WriteLine("Charlie costs " + dogPrice + " dollars. Are you buying Charlie today?");
+                Console.WriteLine("1.Yes");
+                int choice2 = Convert.ToInt32(Console.ReadLine());
+                if (choice2 == 1)
+                {
+                    ListOfDogs.Remove("Charlie");
+                    ShotsStatus.Remove(true);
+                    Console.WriteLine("Thank you for adopting Charlie. I hope he brings you much enjoyment.");
+                    Console.WriteLine("--------------------");
+                    DisplayListOfDogs();
+                    Console.WriteLine("--------------------");
+                    DisplayShotStatusForDogs();
+                    Console.WriteLine("--------------------");
+                }
 
             }
             else if (choice == "Spike")
             {
-                ListOfDogs.Remove("Spike");
-                Console.WriteLine("Thank you for adopting Spike. I hope he brings you much enjoyment.");
-                Console.WriteLine("--------------------");
+                Console.WriteLine("Spike costs " + dogPrice + " dollars. Are you buying Spike today?");
+                Console.WriteLine("1.Yes");
+                int choice2 = Convert.ToInt32(Console.ReadLine());
+                if (choice2 == 1)
+                {
+                    //insert function to subtract money from adopter wallet
+                    //display function for adopter current wallet balance
+                    ListOfDogs.Remove("Spike");
+                    ShotsStatus.Remove(true);
+                    Console.WriteLine("Thank you for adopting Spike. I hope he brings you much enjoyment.");
+                    Console.WriteLine("--------------------");
+                    DisplayListOfDogs();
+                    Console.WriteLine("--------------------");
+                    DisplayShotStatusForDogs();
+                    Console.WriteLine("--------------------");
+                }
 
-                DisplayListOfDogs();
-                Console.WriteLine("--------------------");
             }
-            else if(choice == "Brian")
+            else if (choice == "Brian")
             {
-                ListOfDogs.Remove("Brian");
-                Console.WriteLine("Thank you for adopting Brian. I hope he brings you much enjoyment.");
-                Console.WriteLine("--------------------");
+                Console.WriteLine("Brian costs " + dogPrice + " dollars. Are you buying Brian today?");
+                Console.WriteLine("1.Yes");
+                int choice2 = Convert.ToInt32(Console.ReadLine());
+                if (choice2 == 1)
+                {
+                    //insert function to subtract money from adopter wallet
+                    //display function for adopter current wallet balance
+                    ListOfDogs.Remove("Brian");
+                    ShotsStatus.Remove(true);
+                    Console.WriteLine("Thank you for adopting Brian. I hope he brings you much enjoyment.");
+                    Console.WriteLine("--------------------");
+                    DisplayListOfDogs();
+                    Console.WriteLine("--------------------");
+                    DisplayShotStatusForDogs();
+                    Console.WriteLine("--------------------");
+                }
 
-                DisplayListOfDogs();
-                Console.WriteLine("--------------------");
             }
             else if (choice == "Blizzard")
             {
-                ListOfDogs.Remove("Blizzard");
-                Console.WriteLine("Thank you for adopting Blizzard. I hope he brings you much enjoyment.");
-                Console.WriteLine("--------------------");
+                Console.WriteLine("Blizzard costs " + dogPrice + " dollars. Are you buying Blizzard today?");
+                Console.WriteLine("1.Yes");
+                int choice2 = Convert.ToInt32(Console.ReadLine());
+                if (choice2 == 1)
+                {
+                    //insert function to subtract money from adopter wallet
+                    //display function for adopter current wallet balance
+                    ListOfDogs.Remove("Blizzard");
+                    ShotsStatus.Remove(true);
+                    Console.WriteLine("Thank you for adopting Blizzard. I hope he brings you much enjoyment.");
+                    Console.WriteLine("--------------------");
+                    DisplayListOfDogs();
+                    Console.WriteLine("--------------------");
+                    DisplayShotStatusForDogs();
+                    Console.WriteLine("--------------------");
+                }
 
-                DisplayListOfDogs();
-                Console.WriteLine("--------------------");
             }
             else if (choice == dogName)
             {
+                Console.WriteLine(dogName+" costs "+dogPrice+" dollars. Are you buying "+dogName+" today?");
+                Console.WriteLine("1.Yes");
+                int choice2 = Convert.ToInt32(Console.ReadLine());
+                    if (choice2 == 1)
+                    {
+                    //insert function to subtract money from adopter wallet
+                    //display function for adopter current wallet balance
+                Console.WriteLine("--------------------");
+                Console.WriteLine(dogName+" does not have all of his/her shots. Would you like to give him/her their shots free of cost?");
+                Console.WriteLine("1.Yes");
+                int choice3 = Convert.ToInt32(Console.ReadLine());
+
+                    if (choice3 == 1)
+                    {
+                    ShotsStatus.Remove(false);
+                    Console.WriteLine("Applying shots..........");
+                    Console.WriteLine("--------------------");
+                    Console.WriteLine(dogName+" is now up to date with his/her shots.");
+
+                }
+
                 ListOfDogs.Remove(dogName);
-                Console.WriteLine("Thank you for adopting "+dogName+" . I hope he brings you much enjoyment.");
+                Console.WriteLine("--------------------");
+
+                Console.WriteLine("Thank you for adopting " + dogName + ". I hope he/she brings you much enjoyment.");
                 Console.WriteLine("--------------------");
 
                 DisplayListOfDogs();
                 Console.WriteLine("--------------------");
+                DisplayShotStatusForDogs();
+                Console.WriteLine("--------------------");
+
+
+                }
+
+
             }
             else
             {
@@ -158,9 +252,10 @@ namespace AnimalShelter
             return dogName;
         }
     }
+}
 
             
-        }
+        
 
     
 
