@@ -8,8 +8,8 @@ namespace AnimalShelter
 {
     class SystemOperations
     {
-        Dog donateDog = new Dog();
-        Cat donateCat = new Cat();
+        Dog dog = new Dog();
+        Cat cat = new Cat();
         public SystemOperations()
         {
            
@@ -37,7 +37,28 @@ namespace AnimalShelter
 
             if (choice == 1)
             {
-                //insert adopt a pet function
+                Console.WriteLine("Are you adopting a dog or a cat?");
+                Console.WriteLine("1. Dog");
+                Console.WriteLine("2. Cat");
+
+                int choice2 = Convert.ToInt32(Console.ReadLine());
+
+                if (choice2 == 1)
+                {
+
+                    dog.AdoptDogOption();
+                    SystemFlow();
+                }
+                else if (choice2 == 2)
+                {
+                    cat.AdoptCatOption();
+                    SystemFlow();
+                }
+                else
+                {
+                    Console.WriteLine("Sorry I don't recognize that command. Please enter the numerical value associated with your decision.");
+                    SystemFlow();
+                }
             }
             else if(choice == 2)
             {
@@ -50,17 +71,17 @@ namespace AnimalShelter
                 if (choice2 == 1)
                 {
                     
-                    donateDog.DonateDogOption();
+                    dog.DonateDogOption();
                     SystemFlow();
                 }
                 else if (choice2 == 2)
                 {
-                    donateCat.DonateCatOption();
+                    cat.DonateCatOption();
                     SystemFlow();
                 }
                 else
                 {
-                    Console.WriteLine("Sorry I don't recgnize that command. Please enter the numerical value associated with your decision.");
+                    Console.WriteLine("Sorry I don't recognize that command. Please enter the numerical value associated with your decision.");
                     SystemFlow();
                 }
 
