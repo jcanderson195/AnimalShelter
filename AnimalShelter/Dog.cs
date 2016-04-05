@@ -16,8 +16,11 @@ namespace AnimalShelter
 
         public Dog()
         {
-            
-            
+            ListOfDogs.Add("Charlie");
+            ListOfDogs.Add("Brian");
+            ListOfDogs.Add("Spike");
+            ListOfDogs.Add("Blizzard");
+
         }
 
         public void DisplayListOfDogs()
@@ -30,8 +33,10 @@ namespace AnimalShelter
             
         }
 
+
         public string DonateDog()
         {
+            
             Console.WriteLine("What's the dog's name?");
             string dogName = Console.ReadLine();
             Console.WriteLine("Thank you for donating " + dogName + " to the shelter.");
