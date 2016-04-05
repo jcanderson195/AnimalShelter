@@ -9,6 +9,7 @@ namespace AnimalShelter
     class SystemOperations
     {
         Dog donateDog = new Dog();
+        Cat donateCat = new Cat();
         public SystemOperations()
         {
            
@@ -54,7 +55,8 @@ namespace AnimalShelter
                 }
                 else if (choice2 == 2)
                 {
-                    //insert donate cat function
+                    donateCat.DonateCatOption();
+                    SystemFlow();
                 }
                 else
                 {
