@@ -13,6 +13,8 @@ namespace AnimalShelter
 
         List<string> ListOfDogs = new List<string>();
 
+        
+        
         List<bool> ShotsStatus = new List<bool>();
 
         Adopter newAdopter = new Adopter();
@@ -23,6 +25,7 @@ namespace AnimalShelter
             ListOfDogs.Add("Spike");
             ListOfDogs.Add("Brian");
             ListOfDogs.Add("Blizzard");
+
 
             ShotsStatus.Add(true);
             ShotsStatus.Add(true);
@@ -41,6 +44,7 @@ namespace AnimalShelter
                 Console.WriteLine(ListOfDogs[index]);
             }
 
+            
         }
 
         public void DisplayShotStatusForDogs()

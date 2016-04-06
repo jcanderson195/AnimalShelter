@@ -105,7 +105,20 @@ namespace AnimalShelter
 
                 if (choice3 == 1)
                 {
-                    //display list of animals
+                    Console.WriteLine("----------------------");
+                    dog.DisplayListOfDogs();
+                    Console.WriteLine("----------------------");
+                    dog.DisplayShotStatusForDogs();
+                    Console.WriteLine("----------------------");
+
+                    Console.WriteLine("----------------------");
+                    cat.DisplayListOfCats();
+                    Console.WriteLine("----------------------");
+                    cat.DisplayShotStatusForCats();
+                    Console.WriteLine("----------------------");
+                    SystemFlow();
+
+
                 }
                 else if (choice3 == 2)
                 {
