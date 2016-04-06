@@ -9,8 +9,11 @@ namespace AnimalShelter
    public class Cat : Animal
     {
         public string catName;
+        public double catPrice;
 
         List<string> ListOfCats = new List<string>();
+
+        List<bool> ShotsStatus = new List<bool>();
 
         public Cat()
         {
@@ -18,6 +21,14 @@ namespace AnimalShelter
             ListOfCats.Add("Smoky");
             ListOfCats.Add("Rocky");
             ListOfCats.Add("Winter");
+
+            ShotsStatus.Add(true);
+            ShotsStatus.Add(true);
+            ShotsStatus.Add(true);
+            ShotsStatus.Add(true);
+
+            catPrice = 150.00;
+
         }
 
         public void DisplayListOfCats()
@@ -30,6 +41,16 @@ namespace AnimalShelter
 
         }
 
+        public void DisplayShotStatusForCats()
+        {
+            Console.WriteLine("Shots Status For Cats");
+            for (int index = 0; index < ShotsStatus.Count; index++)
+            {
+                Console.WriteLine(ShotsStatus[index]);
+            }
+        }
+
+
         public string DonateCat()
         {
 
@@ -38,9 +59,13 @@ namespace AnimalShelter
             Console.WriteLine("Thank you for donating " + catName + " to the shelter.");
 
             ListOfCats.Add(catName);
+            ShotsStatus.Add(false);
             Console.WriteLine("--------------------");
             DisplayListOfCats();
             Console.WriteLine("--------------------");
+            DisplayShotStatusForCats();
+            Console.WriteLine("--------------------");
+
 
 
             return catName;
@@ -92,63 +117,131 @@ namespace AnimalShelter
 
         public string AdoptCat()
         {
-            Console.WriteLine("--------------------");
             DisplayListOfCats();
             Console.WriteLine("--------------------");
+            DisplayShotStatusForCats();
+            Console.WriteLine("--------------------");
 
-            Console.WriteLine("Please enter the name which cat you would like to adopt. Name is case sensitive! ");
+            Console.WriteLine("Please enter the name of which cat you would like to adopt. Name is case sensitive!");
 
             string choice = Console.ReadLine();
 
             if (choice == "Milo")
             {
-                ListOfCats.Remove("Milo");
-                Console.WriteLine("Thank you for adopting Milo. I hope he brings you much enjoyment.");
-                Console.WriteLine("--------------------");
-
-                DisplayListOfCats();
-                Console.WriteLine("--------------------");
-
+                Console.WriteLine("Milo costs "+catPrice+" dollars. Are you buying Milo today?");
+                Console.WriteLine("1.Yes");
+                int choice2 = Convert.ToInt32(Console.ReadLine());
+                if (choice2 == 1)
+                {
+                    //insert function to subtract money from adopter wallet
+                    //display function for adopter current wallet balance
+                    ListOfCats.Remove("Milo");
+                    ShotsStatus.Remove(true);
+                    Console.WriteLine("Thank you for adopting Milo. I hope he brings you much enjoyment.");
+                    Console.WriteLine("--------------------");
+                    DisplayListOfCats();
+                    Console.WriteLine("--------------------");
+                    DisplayShotStatusForCats();
+                    Console.WriteLine("--------------------");
+                }
             }
             else if (choice == "Smoky")
             {
-                ListOfCats.Remove("Smoky");
-                Console.WriteLine("Thank you for adopting Smoky. I hope he brings you much enjoyment.");
-                Console.WriteLine("--------------------");
-
-                DisplayListOfCats();
-                Console.WriteLine("--------------------");
+                Console.WriteLine("Smoky costs " + catPrice + " dollars. Are you buying Smoky today?");
+                Console.WriteLine("1.Yes");
+                int choice2 = Convert.ToInt32(Console.ReadLine());
+                if (choice2 == 1)
+                {
+                    //insert function to subtract money from adopter wallet
+                    //display function for adopter current wallet balance
+                    ListOfCats.Remove("Smoky");
+                    ShotsStatus.Remove(true);
+                    Console.WriteLine("Thank you for adopting Smoky. I hope he brings you much enjoyment.");
+                    Console.WriteLine("--------------------");
+                    DisplayListOfCats();
+                    Console.WriteLine("--------------------");
+                    DisplayShotStatusForCats();
+                    Console.WriteLine("--------------------");
+                }
             }
             else if (choice == "Rocky")
             {
-                ListOfCats.Remove("Rocky");
-                Console.WriteLine("Thank you for adopting Rocky. I hope he brings you much enjoyment.");
-                Console.WriteLine("--------------------");
-
-                DisplayListOfCats();
-                Console.WriteLine("--------------------");
+                Console.WriteLine("Rocky costs " + catPrice + " dollars. Are you buying Rocky today?");
+                Console.WriteLine("1.Yes");
+                int choice2 = Convert.ToInt32(Console.ReadLine());
+                if (choice2 == 1)
+                {
+                    //insert function to subtract money from adopter wallet
+                    //display function for adopter current wallet balance
+                    ListOfCats.Remove("Rocky");
+                    ShotsStatus.Remove(true);
+                    Console.WriteLine("Thank you for adopting Rocky. I hope he brings you much enjoyment.");
+                    Console.WriteLine("--------------------");
+                    DisplayListOfCats();
+                    Console.WriteLine("--------------------");
+                    DisplayShotStatusForCats();
+                    Console.WriteLine("--------------------");
+                }
             }
             else if (choice == "Winter")
             {
-                ListOfCats.Remove("Winter");
-                Console.WriteLine("Thank you for adopting Winter. I hope he brings you much enjoyment.");
-                Console.WriteLine("--------------------");
-
-                DisplayListOfCats();
-                Console.WriteLine("--------------------");
+                Console.WriteLine("Winter costs " + catPrice + " dollars. Are you buying Winter today?");
+                Console.WriteLine("1.Yes");
+                int choice2 = Convert.ToInt32(Console.ReadLine());
+                if (choice2 == 1)
+                {
+                    //insert function to subtract money from adopter wallet
+                    //display function for adopter current wallet balance
+                    ListOfCats.Remove("Winter");
+                    ShotsStatus.Remove(true);
+                    Console.WriteLine("Thank you for adopting Winter. I hope he brings you much enjoyment.");
+                    Console.WriteLine("--------------------");
+                    DisplayListOfCats();
+                    Console.WriteLine("--------------------");
+                    DisplayShotStatusForCats();
+                    Console.WriteLine("--------------------");
+                }
             }
             else if (choice == catName)
             {
-                ListOfCats.Remove(catName);
-                Console.WriteLine("Thank you for adopting " + catName + " . I hope he brings you much enjoyment.");
-                Console.WriteLine("--------------------");
+                Console.WriteLine(catName + " costs " + catPrice + " dollars. Are you buying " + catName + " today?");
+                Console.WriteLine("1.Yes");
+                int choice2 = Convert.ToInt32(Console.ReadLine());
+                if (choice2 == 1)
+                {
+                    //insert function to subtract money from adopter wallet
+                    //display function for adopter current wallet balance
+                    Console.WriteLine("--------------------");
+                    Console.WriteLine(catName + " does not have all of his/her shots. Would you like to give him/her their shots free of cost?");
+                    Console.WriteLine("1.Yes");
+                    int choice3 = Convert.ToInt32(Console.ReadLine());
 
-                DisplayListOfCats();
-                Console.WriteLine("--------------------");
+                    if (choice3 == 1)
+                    {
+                        ShotsStatus.Remove(false);
+                        Console.WriteLine("Applying shots..........");
+                        Console.WriteLine("--------------------");
+                        Console.WriteLine(catName + " is now up to date with his/her shots.");
+
+                    }
+
+                    ListOfCats.Remove(catName);
+                    Console.WriteLine("--------------------");
+
+                    Console.WriteLine("Thank you for adopting " + catName + ". I hope he/she brings you much enjoyment.");
+                    Console.WriteLine("--------------------");
+
+                    DisplayListOfCats();
+                    Console.WriteLine("--------------------");
+                    DisplayShotStatusForCats();
+                    Console.WriteLine("--------------------");
+
+
+                }
             }
             else
             {
-                Console.WriteLine("I'm sorry that dog is not in the system. Please choose a dog thats in the List of Dogs.");
+                Console.WriteLine("I'm sorry that cat is not in the system. Please choose a cat thats in the List of Cats.");
             }
 
             return catName;

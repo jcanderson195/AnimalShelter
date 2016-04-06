@@ -123,7 +123,7 @@ namespace AnimalShelter
             DisplayShotStatusForDogs();
             Console.WriteLine("--------------------");
 
-            Console.WriteLine("Please enter the name which dog you would like to adopt. Name is case sensitive!");
+            Console.WriteLine("Please enter the name of which dog you would like to adopt. Name is case sensitive!");
 
             string choice = Console.ReadLine();
 
@@ -134,6 +134,8 @@ namespace AnimalShelter
                 int choice2 = Convert.ToInt32(Console.ReadLine());
                 if (choice2 == 1)
                 {
+                    //insert function to subtract money from adopter wallet
+                    //display function for adopter current wallet balance
                     ListOfDogs.Remove("Charlie");
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Charlie. I hope he brings you much enjoyment.");
@@ -226,7 +228,7 @@ namespace AnimalShelter
                     Console.WriteLine("--------------------");
                     Console.WriteLine(dogName+" is now up to date with his/her shots.");
 
-                }
+                    }
 
                 ListOfDogs.Remove(dogName);
                 Console.WriteLine("--------------------");
