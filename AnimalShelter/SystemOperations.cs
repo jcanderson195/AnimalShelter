@@ -10,6 +10,9 @@ namespace AnimalShelter
     {
         Dog dog = new Dog();
         Cat cat = new Cat();
+
+        
+
         public SystemOperations()
         {
            
@@ -37,6 +40,7 @@ namespace AnimalShelter
 
             if (choice == 1)
             {
+                
                 Console.WriteLine("Are you adopting a dog or a cat?");
                 Console.WriteLine("1. Dog");
                 Console.WriteLine("2. Cat");

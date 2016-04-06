@@ -15,7 +15,7 @@ namespace AnimalShelter
 
         List<bool> ShotsStatus = new List<bool>();
 
-
+        Adopter newAdopter = new Adopter();
 
         public Dog()
         {
@@ -96,6 +96,7 @@ namespace AnimalShelter
 
         public void AdoptDogOption()
         {
+            
             Console.WriteLine("Are you adopting a dog?");
             Console.WriteLine("1.Yes");
             Console.WriteLine("2.Exit");
@@ -118,6 +119,9 @@ namespace AnimalShelter
 
         public string AdoptDog()
         {
+            newAdopter.AdopterProfile();
+            newAdopter.AdopterBudget();
+            Console.WriteLine("--------------------");
             DisplayListOfDogs();
             Console.WriteLine("--------------------");
             DisplayShotStatusForDogs();
@@ -134,8 +138,8 @@ namespace AnimalShelter
                 int choice2 = Convert.ToInt32(Console.ReadLine());
                 if (choice2 == 1)
                 {
-                    //insert function to subtract money from adopter wallet
-                    //display function for adopter current wallet balance
+                    newAdopter.PurchaseDog();
+                    newAdopter.WalletBalanceTracker();
                     ListOfDogs.Remove("Charlie");
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Charlie. I hope he brings you much enjoyment.");
@@ -154,8 +158,8 @@ namespace AnimalShelter
                 int choice2 = Convert.ToInt32(Console.ReadLine());
                 if (choice2 == 1)
                 {
-                    //insert function to subtract money from adopter wallet
-                    //display function for adopter current wallet balance
+                    newAdopter.PurchaseDog();
+                    newAdopter.WalletBalanceTracker();
                     ListOfDogs.Remove("Spike");
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Spike. I hope he brings you much enjoyment.");
@@ -174,8 +178,8 @@ namespace AnimalShelter
                 int choice2 = Convert.ToInt32(Console.ReadLine());
                 if (choice2 == 1)
                 {
-                    //insert function to subtract money from adopter wallet
-                    //display function for adopter current wallet balance
+                    newAdopter.PurchaseDog();
+                    newAdopter.WalletBalanceTracker();
                     ListOfDogs.Remove("Brian");
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Brian. I hope he brings you much enjoyment.");
@@ -194,8 +198,8 @@ namespace AnimalShelter
                 int choice2 = Convert.ToInt32(Console.ReadLine());
                 if (choice2 == 1)
                 {
-                    //insert function to subtract money from adopter wallet
-                    //display function for adopter current wallet balance
+                    newAdopter.PurchaseDog();
+                    newAdopter.WalletBalanceTracker();
                     ListOfDogs.Remove("Blizzard");
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Blizzard. I hope he brings you much enjoyment.");
@@ -214,9 +218,9 @@ namespace AnimalShelter
                 int choice2 = Convert.ToInt32(Console.ReadLine());
                     if (choice2 == 1)
                     {
-                    //insert function to subtract money from adopter wallet
-                    //display function for adopter current wallet balance
-                Console.WriteLine("--------------------");
+                    newAdopter.PurchaseDog();
+                    newAdopter.WalletBalanceTracker();
+                    Console.WriteLine("--------------------");
                 Console.WriteLine(dogName+" does not have all of his/her shots. Would you like to give him/her their shots free of cost?");
                 Console.WriteLine("1.Yes");
                 int choice3 = Convert.ToInt32(Console.ReadLine());

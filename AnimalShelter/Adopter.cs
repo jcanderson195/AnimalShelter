@@ -8,57 +8,72 @@ namespace AnimalShelter
 {
     class Adopter
     {
-        public double Wallet;
-        public string nameAnimal;
+        public double walletBalance;
+        public double dogPrice;
+        public double catPrice;
+        public string adopterName;
+       
 
         public Adopter()
         {
-
+            
+            
         }
 
-        public void PurchaseAnimal()
+
+        public string AdopterProfile()
         {
-            //include remove animal (dog or cat) from animalList
+            Console.WriteLine("What is your name?");
+            adopterName = Console.ReadLine();
+            Console.WriteLine("----------------------");
+            return adopterName;
+
         }
 
-
-        public void AdoptAnimal()
+        public void GetWalletBalance()
         {
-            Console.WriteLine("What type of animal would you like to adopt?");
-            Console.WriteLine("1.Dog");
-            Console.WriteLine("2.Cat");
-
-            int choice = Convert.ToInt32(Console.ReadLine());
-
-            if (choice == 1)
-            {
-                //insert adopt dog function that removes dog from List of dogs
-            }
-            else if (choice == 2)
-            {
-                //insert adopt cat function that removes cat from List of cats
-            }
-            else
-            {
-                Console.WriteLine("Sorry I don't recgnize that command. Please enter the numerical value associated with your decision.");
-                AdoptAnimal();
-            }
-
+            walletBalance = Convert.ToDouble(Console.ReadLine());
+            
         }
 
 
-
-
-        public string NameAnimal()
+        public double AdopterBudget()
         {
-            Console.WriteLine("What would you like to name your new pet?");
-            nameAnimal = Console.ReadLine();
-            Console.WriteLine(nameAnimal+" is now a part of your family. Congratulations!");
-            Console.ReadKey();
-            return nameAnimal;
+            Console.WriteLine("How much money do you have to spend with us today? Our dogs are $200.00 and our cats are $150.00 ");
+            GetWalletBalance();
+            Console.WriteLine("----------------------");
 
+
+            return walletBalance;
+        }
+
+        public double WalletBalanceTracker()
+        {
+            Console.WriteLine(adopterName+", you now have "+walletBalance+ " dollars in your wallet.");
+            return walletBalance;
+        }
+
+
+        public double PurchaseDog()
+        {
+            dogPrice = 200.00;
+            walletBalance = walletBalance - dogPrice;
+
+            return walletBalance;
 
         }
+
+        public double PurchaseCat()
+        {
+            catPrice = 150.00;
+            walletBalance = walletBalance - catPrice;
+
+            return walletBalance;
+        }
+
+
+
+       
 
     }
 }
