@@ -15,6 +15,8 @@ namespace AnimalShelter
 
         List<bool> ShotsStatus = new List<bool>();
 
+        Adopter newAdopter = new Adopter();
+
         public Cat()
         {
             ListOfCats.Add("Milo");
@@ -117,6 +119,9 @@ namespace AnimalShelter
 
         public string AdoptCat()
         {
+            newAdopter.AdopterProfile();
+            newAdopter.AdopterBudget();
+            Console.WriteLine("--------------------");
             DisplayListOfCats();
             Console.WriteLine("--------------------");
             DisplayShotStatusForCats();
@@ -133,8 +138,8 @@ namespace AnimalShelter
                 int choice2 = Convert.ToInt32(Console.ReadLine());
                 if (choice2 == 1)
                 {
-                    //insert function to subtract money from adopter wallet
-                    //display function for adopter current wallet balance
+                    newAdopter.PurchaseCat();
+                    newAdopter.WalletBalanceTracker();
                     ListOfCats.Remove("Milo");
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Milo. I hope he brings you much enjoyment.");
@@ -152,8 +157,8 @@ namespace AnimalShelter
                 int choice2 = Convert.ToInt32(Console.ReadLine());
                 if (choice2 == 1)
                 {
-                    //insert function to subtract money from adopter wallet
-                    //display function for adopter current wallet balance
+                    newAdopter.PurchaseCat();
+                    newAdopter.WalletBalanceTracker();
                     ListOfCats.Remove("Smoky");
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Smoky. I hope he brings you much enjoyment.");
@@ -171,8 +176,8 @@ namespace AnimalShelter
                 int choice2 = Convert.ToInt32(Console.ReadLine());
                 if (choice2 == 1)
                 {
-                    //insert function to subtract money from adopter wallet
-                    //display function for adopter current wallet balance
+                    newAdopter.PurchaseCat();
+                    newAdopter.WalletBalanceTracker();
                     ListOfCats.Remove("Rocky");
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Rocky. I hope he brings you much enjoyment.");
@@ -190,8 +195,8 @@ namespace AnimalShelter
                 int choice2 = Convert.ToInt32(Console.ReadLine());
                 if (choice2 == 1)
                 {
-                    //insert function to subtract money from adopter wallet
-                    //display function for adopter current wallet balance
+                    newAdopter.PurchaseCat();
+                    newAdopter.WalletBalanceTracker();
                     ListOfCats.Remove("Winter");
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Winter. I hope he brings you much enjoyment.");
@@ -209,8 +214,8 @@ namespace AnimalShelter
                 int choice2 = Convert.ToInt32(Console.ReadLine());
                 if (choice2 == 1)
                 {
-                    //insert function to subtract money from adopter wallet
-                    //display function for adopter current wallet balance
+                    newAdopter.PurchaseCat();
+                    newAdopter.WalletBalanceTracker();
                     Console.WriteLine("--------------------");
                     Console.WriteLine(catName + " does not have all of his/her shots. Would you like to give him/her their shots free of cost?");
                     Console.WriteLine("1.Yes");
