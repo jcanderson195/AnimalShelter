@@ -35,7 +35,7 @@ namespace AnimalShelter
 
         public void DisplayListOfCats()
         {
-            Console.WriteLine("List of Cats");
+            Console.WriteLine("Cat Cage");
             for (int index = 0; index < ListOfCats.Count; index++)
             {
                 Console.WriteLine(ListOfCats[index]);

@@ -10,6 +10,7 @@ namespace AnimalShelter
     {
         public string dogName;
         public double dogPrice;
+        public double dogFoodPrice;
 
         List<string> ListOfDogs = new List<string>();
 
@@ -33,12 +34,12 @@ namespace AnimalShelter
             ShotsStatus.Add(true);
 
             dogPrice = 200.00;
-
+            dogFoodPrice = 30.00;
         }
 
         public void DisplayListOfDogs()
         {
-            Console.WriteLine("List of Dogs");
+            Console.WriteLine("Dog Cage");
             for (int index = 0; index < ListOfDogs.Count; index++)
             {
                 Console.WriteLine(ListOfDogs[index]);
@@ -148,6 +149,12 @@ namespace AnimalShelter
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Charlie. I hope he brings you much enjoyment.");
                     Console.WriteLine("--------------------");
+                    DogFeed();
+                    Console.WriteLine("This bag should last you one week from today.");
+                    Console.WriteLine("--------------------");
+                    newAdopter.WalletBalanceTracker();
+                    Console.WriteLine("--------------------");
+                    Console.WriteLine("--------------------");
                     DisplayListOfDogs();
                     Console.WriteLine("--------------------");
                     DisplayShotStatusForDogs();
@@ -167,6 +174,12 @@ namespace AnimalShelter
                     ListOfDogs.Remove("Spike");
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Spike. I hope he brings you much enjoyment.");
+                    Console.WriteLine("--------------------");
+                    DogFeed();
+                    Console.WriteLine("This bag should last you one week from today.");
+                    Console.WriteLine("--------------------");
+                    newAdopter.WalletBalanceTracker();
+                    Console.WriteLine("--------------------");
                     Console.WriteLine("--------------------");
                     DisplayListOfDogs();
                     Console.WriteLine("--------------------");
@@ -188,6 +201,12 @@ namespace AnimalShelter
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Brian. I hope he brings you much enjoyment.");
                     Console.WriteLine("--------------------");
+                    DogFeed();
+                    Console.WriteLine("This bag should last you one week from today.");
+                    Console.WriteLine("--------------------");
+                    newAdopter.WalletBalanceTracker();
+                    Console.WriteLine("--------------------");
+                    Console.WriteLine("--------------------");
                     DisplayListOfDogs();
                     Console.WriteLine("--------------------");
                     DisplayShotStatusForDogs();
@@ -207,6 +226,12 @@ namespace AnimalShelter
                     ListOfDogs.Remove("Blizzard");
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Blizzard. I hope he brings you much enjoyment.");
+                    Console.WriteLine("--------------------");
+                    DogFeed();
+                    Console.WriteLine("This bag should last you one week from today.");
+                    Console.WriteLine("--------------------");
+                    newAdopter.WalletBalanceTracker();
+                    Console.WriteLine("--------------------");
                     Console.WriteLine("--------------------");
                     DisplayListOfDogs();
                     Console.WriteLine("--------------------");
@@ -242,9 +267,14 @@ namespace AnimalShelter
                 Console.WriteLine("--------------------");
 
                 Console.WriteLine("Thank you for adopting " + dogName + ". I hope he/she brings you much enjoyment.");
-                Console.WriteLine("--------------------");
-
-                DisplayListOfDogs();
+                    Console.WriteLine("--------------------");
+                    DogFeed();
+                    Console.WriteLine("This bag should last you one week from today.");
+                    Console.WriteLine("--------------------");
+                    newAdopter.WalletBalanceTracker();
+                    Console.WriteLine("--------------------");
+                    Console.WriteLine("--------------------");
+                    DisplayListOfDogs();
                 Console.WriteLine("--------------------");
                 DisplayShotStatusForDogs();
                 Console.WriteLine("--------------------");
@@ -261,6 +291,21 @@ namespace AnimalShelter
 
             return dogName;
         }
+
+        public void DogFeed()
+        {
+            Console.WriteLine("Would you like to purchase a bag of Blue Buffalo dog food for $30? ");
+            Console.WriteLine("1. Yes");
+            Console.WriteLine("--------------------");
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                newAdopter.PurchaseDogFood();
+            }
+        }
+
+
     }
 }
 

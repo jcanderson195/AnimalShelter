@@ -10,7 +10,9 @@ namespace AnimalShelter
     {
         public double walletBalance;
         public double dogPrice;
+        public double dogFoodPrice;
         public double catPrice;
+        public double catFoodPrice;
         public string adopterName;
        
 
@@ -63,6 +65,13 @@ namespace AnimalShelter
 
         }
 
+        public double PurchaseDogFood()
+        {
+            dogFoodPrice = 30.00;
+            walletBalance = walletBalance - dogFoodPrice;
+            return walletBalance;
+        }
+
         public double PurchaseCat()
         {
             catPrice = 150.00;
@@ -71,7 +80,12 @@ namespace AnimalShelter
             return walletBalance;
         }
 
-
+       public double PurchaseCatFood()
+        {
+            catFoodPrice = 25.00;
+            walletBalance = walletBalance - catFoodPrice;
+            return walletBalance;
+        }
 
        
 
