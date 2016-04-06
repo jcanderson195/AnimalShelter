@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnimalShelter
 {
-   public class Cat : Animal
+   public class Cat
     {
         public string catName;
         public double catPrice;
