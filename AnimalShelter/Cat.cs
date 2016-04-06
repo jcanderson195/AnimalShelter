@@ -10,6 +10,7 @@ namespace AnimalShelter
     {
         public string catName;
         public double catPrice;
+        public double catFoodPrice;
 
         List<string> ListOfCats = new List<string>();
 
@@ -30,6 +31,7 @@ namespace AnimalShelter
             ShotsStatus.Add(true);
 
             catPrice = 150.00;
+            catFoodPrice = 25.00;
 
         }
 
@@ -144,6 +146,12 @@ namespace AnimalShelter
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Milo. I hope he brings you much enjoyment.");
                     Console.WriteLine("--------------------");
+                    CatFeed();
+                    Console.WriteLine("This bag should last you two weeks from today.");
+                    Console.WriteLine("--------------------");
+                    newAdopter.WalletBalanceTracker();
+                    Console.WriteLine("--------------------");
+                    Console.WriteLine("--------------------");
                     DisplayListOfCats();
                     Console.WriteLine("--------------------");
                     DisplayShotStatusForCats();
@@ -162,6 +170,12 @@ namespace AnimalShelter
                     ListOfCats.Remove("Smoky");
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Smoky. I hope he brings you much enjoyment.");
+                    Console.WriteLine("--------------------");
+                    CatFeed();
+                    Console.WriteLine("This bag should last you two weeks from today.");
+                    Console.WriteLine("--------------------");
+                    newAdopter.WalletBalanceTracker();
+                    Console.WriteLine("--------------------");
                     Console.WriteLine("--------------------");
                     DisplayListOfCats();
                     Console.WriteLine("--------------------");
@@ -182,6 +196,12 @@ namespace AnimalShelter
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Rocky. I hope he brings you much enjoyment.");
                     Console.WriteLine("--------------------");
+                    CatFeed();
+                    Console.WriteLine("This bag should last you two weeks from today.");
+                    Console.WriteLine("--------------------");
+                    newAdopter.WalletBalanceTracker();
+                    Console.WriteLine("--------------------");
+                    Console.WriteLine("--------------------");
                     DisplayListOfCats();
                     Console.WriteLine("--------------------");
                     DisplayShotStatusForCats();
@@ -200,6 +220,12 @@ namespace AnimalShelter
                     ListOfCats.Remove("Winter");
                     ShotsStatus.Remove(true);
                     Console.WriteLine("Thank you for adopting Winter. I hope he brings you much enjoyment.");
+                    Console.WriteLine("--------------------");
+                    CatFeed();
+                    Console.WriteLine("This bag should last you two weeks from today.");
+                    Console.WriteLine("--------------------");
+                    newAdopter.WalletBalanceTracker();
+                    Console.WriteLine("--------------------");
                     Console.WriteLine("--------------------");
                     DisplayListOfCats();
                     Console.WriteLine("--------------------");
@@ -235,6 +261,12 @@ namespace AnimalShelter
 
                     Console.WriteLine("Thank you for adopting " + catName + ". I hope he/she brings you much enjoyment.");
                     Console.WriteLine("--------------------");
+                    CatFeed();
+                    Console.WriteLine("This bag should last you two weeks from today.");
+                    Console.WriteLine("--------------------");
+                    newAdopter.WalletBalanceTracker();
+                    Console.WriteLine("--------------------");
+                    Console.WriteLine("--------------------");
 
                     DisplayListOfCats();
                     Console.WriteLine("--------------------");
@@ -250,6 +282,19 @@ namespace AnimalShelter
             }
 
             return catName;
+        }
+
+        public void CatFeed()
+        {
+            Console.WriteLine("Would you like to purchase a bag of Blue Wilderness cat food for $25? ");
+            Console.WriteLine("1. Yes");
+            Console.WriteLine("--------------------");
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                newAdopter.PurchaseCatFood();
+            }
         }
 
     }
